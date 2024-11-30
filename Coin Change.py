@@ -6,7 +6,7 @@ def coin_change(coins, amount):
     #if we have no change, return 0 monetary amount, 0 amount of coins
     #else make a list to carry the coins combos
     if(amount == 0):
-        return [0], 0
+        return None, 0
     else: 
         coin_combo[0] = list()
 
@@ -22,7 +22,13 @@ def coin_change(coins, amount):
                 candidate = coin_combo[i-denom] + [denom]
                 if coin_combo[i] is None or len(candidate)  < len(coin_combo[i]):
                     coin_combo[i] = candidate
-    return coin_combo[amount], len(coin_combo[amount])
+
+    #if there is no solution  (None), return no solution
+    #used when coins is empty [], or when coins cannot equal amount
+    if(coin_combo[amount] == None):
+        return None, 0
+    else:
+        return coin_combo[amount], len(coin_combo[amount])
 
 amount = 11
 coins = [1, 2, 5]
