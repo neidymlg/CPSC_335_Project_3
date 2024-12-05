@@ -1,37 +1,18 @@
-Overview
+This solution uses the Floyd-Warshall algorithm to compute the shortest paths between all pairs of nodes in the network.
+Algorithm
+Create an n × n
+n×n matrix initialized with infinity (inf) for all distances, except for self-loops (set to 0).
+Update the matrix with direct travel times from the input edges.
+Use the Floyd-Warshall algorithm to compute the shortest paths:
+For each intermediate node k, update paths between every pair of nodes i and 
+j to use k as an intermediate step if it reduces the travel time.
+Find the maximum time for the signal to reach any node from the start. If some nodes remain unreachable, return -1.
 
-This project addresses two algorithmic problems: the Coin Change Problem and the Network Delay Time Problem. Both algorithms are implemented in Python and are accompanied by pseudocode, mathematical analysis, and testing.
-Problems Addressed
+Code Usage
 
-Coin Change Problem (Dynamic Programming)
-Objective: Determine the minimum number of coins required to make a given amount. If it's not possible, return -1.
-Implementation: A bottom-up dynamic programming approach with a list tracking coin combinations.
-Network Delay Time Problem (Floyd-Warshall Algorithm)
-Objective: Find the minimum time required for all nodes in a network to receive a signal from a given source. If some nodes can't be reached, return -1.
-Implementation: Floyd-Warshall algorithm, used for finding shortest paths in a weighted graph.
-Files
-
-coin_change.py
-Implements the solution to the Coin Change problem.
-network_delay.py
-Implements the solution to the Network Delay Time problem.
-report_project3.pdf
-Detailed report including pseudocode, mathematical analysis, and testing results.
-This README file
-
-
-Running the Programs
-
-Ensure Python is installed.
-Coin Change Problem
-Run the script:
-python coin_change.py
-Example Output:
-Coins used: [5, 5, 1]  
-Number of coins used: 3  
-Network Delay Time Problem
+Requirements
+Python 3.
+Running the Code
+Save the file as network_delay.py.
 Run the script:
 python network_delay.py
-Example Output:
-Minimum time for all nodes to get the message: 2  
-0
