@@ -20,8 +20,9 @@ def get_total_time(times, n, start_node):
         combo_arr.append([float('inf')] * n)
         combo_arr[i][i] = 0
 
+    #initalizes edge
     #initalizes all node connects
-    #[starting node] * [ending node] = edge
+    #A0[starting node, ending node] = edge
     for i in range(0, len(times)):
         combo_arr[times[i][0]-1][times[i][1]-1] = times[i][2]
 
